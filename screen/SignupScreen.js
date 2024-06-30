@@ -6,6 +6,7 @@ import tw from 'tailwind-react-native-classnames';
 import { Ionicons } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import competitionContext from '../store/competitionContext';
+import Button from '../components/Button';
 
 const modalBlueIcon = require("../assets/images/blueIcon.png")
 
@@ -189,7 +190,7 @@ const SignupScreen = ({ navigation }) => {
                       <Text style={tw`text-green-500 font-bold text-lg`}>✓</Text>
                     )}
                   </View>
-                  <Text className="">I agree to the Terms and Conditions</Text>
+                  <Text className="">By signing up, I agree to Cloit's Terms & Conditions and Privacy Policy.</Text>
                 </TouchableOpacity>
                 {touched.termsAccepted && errors.termsAccepted && (
                   <Text style={tw`text-red-500 mt-1`}>{errors.termsAccepted}</Text>
@@ -208,6 +209,8 @@ const SignupScreen = ({ navigation }) => {
                 </View>
                 <Ionicons name="arrow-forward-circle-outline" size={40} color="white" className='ml-2' />
               </TouchableOpacity>
+
+              <Button label={"awow"} onPress={()=>{}}/>
 
             </View>
           )}

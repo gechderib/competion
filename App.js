@@ -14,72 +14,16 @@ import { Ionicons } from '@expo/vector-icons';
 import tw from 'tailwind-react-native-classnames';
 import CompetitionScreen from './screen/CompetitionScreen';
 import { CompetitionProvider } from './store/competitionContext';
+
+import Constants from 'expo-constants'
+import Storybook from './.storybook'
+
+
 const Stack = createNativeStackNavigator();
 
-function LogoTitle() {
-  return (
-    <Image
-      style={{ width: 50, height: 50 }}
-      source={PlaceholderImage}
-    />
-  );
-}
 
 
-const CustomHeader = ({ navigation }) => {
-  const handleBackPress = () => {
-    navigation.goBack(); // Example function to go back in navigation stack
-  };
-
-  return (
-    <View className='bg-white p-4 items-center justify-start flex-row shadow-none gap-3'>
-      {/* Back Button Icon */}
-      <TouchableOpacity onPress={handleBackPress} className='ml-2 rounded-full border border-gray-400 p-2'>
-        <Ionicons name="arrow-back-outline" size={24} color={"gray"} />
-      </TouchableOpacity>
-      <Text className="text-lg font-bold">Create Account</Text>
-    </View>
-  );
-};
-
-export default function App() {
-
-  const [selectedImage, setSelectedImage] = useState(null)
-  const [showAppOptions, setShowAppOptions] = useState(false);
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [pickedEmoji, setPickedEmoji] = useState(null);
-
-  const pickImageAsync = async () => {
-    let result = await ImagePicker.launchImageLibraryAsync({
-      allowsEditing: true,
-      quality: 1
-    })
-
-    if (!result.canceled) {
-      console.log(result)
-      setSelectedImage(result.assets[0].uri)
-      setShowAppOptions(true);
-    } else {
-      alert("You didn't select any image")
-    }
-  }
-
-  const onReset = () => {
-    setShowAppOptions(false);
-  };
-
-  const onAddSticker = () => {
-    setIsModalVisible(true);
-  };
-
-  const onSaveImageAsync = async () => {
-    // we will implement this later
-  };
-
-  const onModalClose = () => {
-    setIsModalVisible(false);
-  };
-
+function App() {
 
   return (
     <CompetitionProvider>
@@ -160,6 +104,8 @@ export default function App() {
     // </View>
   );
 }
+
+export default Constants.expoConfig?.extra?.storybookEnabled ? Storybook: App;
 
 const styles = StyleSheet.create({
   container: {

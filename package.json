@@ -6,13 +6,19 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "storybook:start": "STORYBOOK=1 expo start",
+    "storybook:android": "STORYBOOK=1 expo start --android",
+    "storybook:ios": "STORYBOOK=1 expo start --ios",
+    "web": "expo start --web",
+    "storybook-generate": "sb-rn-get-stories"
   },
   "dependencies": {
     "@expo/metro-runtime": "~3.2.1",
     "@expo/vector-icons": "^14.0.2",
     "@react-navigation/native": "^6.1.17",
     "@react-navigation/native-stack": "^6.9.26",
+    "@storybook/addon-ondevice-backgrounds": "^7.6.20",
+    "@storybook/addon-ondevice-notes": "^7.6.20",
     "expo": "~51.0.17",
     "expo-av": "~14.0.6",
     "expo-image-picker": "~15.0.6",
@@ -30,10 +36,18 @@
     "react-native-web": "~0.19.10",
     "tailwind-react-native-classnames": "^1.5.1",
     "tailwind-rn": "^4.2.0",
+    "typescript": "~5.3.3",
     "yup": "^1.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
+    "@react-native-async-storage/async-storage": "^1.23.1",
+    "@react-native-community/datetimepicker": "^8.1.1",
+    "@react-native-community/slider": "^4.5.2",
+    "@storybook/addon-ondevice-actions": "^7.6.20",
+    "@storybook/addon-ondevice-controls": "^7.6.20",
+    "@storybook/react-native": "^7.6.20",
+    "babel-loader": "^8.3.0",
     "tailwindcss": "^3.3.2"
   },
   "private": true
