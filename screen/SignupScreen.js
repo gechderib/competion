@@ -3,7 +3,7 @@ import { View, Text, TextInput, TouchableOpacity, ScrollView, Modal, Image } fro
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import tw from 'tailwind-react-native-classnames';
-import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import competitionContext from '../store/competitionContext';
 

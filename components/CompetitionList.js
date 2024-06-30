@@ -51,7 +51,6 @@ const CompetitionList = () => {
  
  return (
   <SafeAreaView style={tw`flex-1`}>
-   <Text>{JSON.stringify(selectedCompetition)}</Text>
    <FlatList
     data={competitionList}
     keyExtractor={(competition) => competition.id}

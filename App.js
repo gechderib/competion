@@ -3,19 +3,9 @@ import { StyleSheet, Text, View, Image, Pressable, TouchableOpacity } from 'reac
 import * as ImagePicker from 'expo-image-picker'
 const PlaceholderImage = require("./assets/images/background-image.png")
 
-import ImageViewer from './components/ImageViewer';
-import Button from './components/Button';
 import { useState } from 'react';
-import IconButton from './components/IconButton';
-import CircleButton from './components/CircleButton';
-import EmojiPicker from './components/EmojiPicker';
-import EmojiList from './components/EmojiList';
-import EmojiSticker from './components/EmojiSticker';
 import { NavigationContainer } from '@react-navigation/native';
-import HomeScreen from './screen/HomeScreen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import DetailScreen from './screen/DetailScreen';
-import CreatePostScreen from './screen/CreatePostScreen';
 import SplashScreen from './screen/SplashScreen';
 import SignupScreen from './screen/SignupScreen';
 import { Ionicons } from '@expo/vector-icons';
@@ -106,40 +96,7 @@ export default function App() {
         // }}
         >
 
-          <Stack.Screen
-            name="Home"
-            component={HomeScreen}
-            options={{
-              title: 'My home',
-              headerStyle: {
-                backgroundColor: '#f4511e',
-              },
-              headerTintColor: '#fff',
-              headerTitleStyle: {
-                fontWeight: 'bold',
-              },
-            }}
-          />
-          <Stack.Screen
-            name="Detail"
-            component={DetailScreen}
-            initialParams={{ itemId: 42 }}
-            options={{
-              headerTitle: (props) => <LogoTitle {...props} />,
-              headerRight: () => (
-                // <Button
-                //   onPress={() => alert('This is a button!')}
-                //   title="Info"
-                //   color="black"
-                // />
-                <Pressable onPress={() => alert('dkfj')} title="Info">
-                  <Text>Info</Text>
-                </Pressable>
-              ),
-            }} />
-
-          <Stack.Screen name="Post" component={CreatePostScreen} />
-
+        
 
           <Stack.Screen name="Splash" component={SplashScreen} options={{
             headerShown: false
