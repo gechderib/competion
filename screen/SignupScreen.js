@@ -6,7 +6,6 @@ import tw from 'tailwind-react-native-classnames';
 import { Ionicons } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import competitionContext from '../store/competitionContext';
-import Button from '../components/Button';
 
 const modalBlueIcon = require("../assets/images/blueIcon.png")
 
@@ -61,7 +60,7 @@ const SignupScreen = ({ navigation }) => {
   const closeModal = () => {
     setModalVisible(false);
   };
-  // React.useEffect(()=>{}, [selectedCompetition])
+
   return (
     <SafeAreaView className='flex-1'>
       <CustomHeader navigation={navigation} />
@@ -210,7 +209,6 @@ const SignupScreen = ({ navigation }) => {
                 <Ionicons name="arrow-forward-circle-outline" size={40} color="white" className='ml-2' />
               </TouchableOpacity>
 
-              <Button label={"awow"} onPress={()=>{}}/>
 
             </View>
           )}

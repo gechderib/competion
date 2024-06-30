@@ -1,86 +1,82 @@
-// import React from 'react'
-// import { Pressable, Text, View, StyleSheet } from 'react-native'
-// import FontAwesome from "@expo/vector-icons/FontAwesome";
+import React from 'react'
+import { Pressable, Text, View, StyleSheet, TouchableOpacity } from 'react-native'
+import FontAwesome from "@expo/vector-icons/FontAwesome";
 
-// const Button = ({ label, theme, onPress }) => {
+export const Button = ({ label, theme, onPress }) => {
 
-//  if (theme === "primary") {
-//   return (
-//    <View style={[styles.buttonContainer, { borderWidth: 4, borderColor: "#ffd33d", borderRadius: 18 }]}>
-//     <Pressable
-//      style={[styles.button, { backgroundColor: "#fff" }]}
-//      onPress={() => onPress()}
-//     >
-//      <FontAwesome
-//       name="picture-o"
-//       size={18}
-//       color="#25292e"
-//       style={styles.buttonIcon}
-//      />
-//      <Text style={[styles.buttonLabel, { color: "#25292e" }]}>{label}</Text>
-//     </Pressable>
-//    </View>
-//   );
+ if (theme === "primary") {
+  return (
+   <View style={[styles.buttonContainer, { borderWidth: 4, borderColor: "#ffd33d", borderRadius: 18 }]}>
+    <Pressable
+     style={[styles.button, { backgroundColor: "#fff" }]}
+     onPress={() => onPress()}
+    >
+     <FontAwesome
+      name="picture-o"
+      size={18}
+      color="#25292e"
+      style={styles.buttonIcon}
+     />
+     <Text style={[styles.buttonLabel, { color: "#25292e" }]}>{label}</Text>
+    </Pressable>
+   </View>
+  );
 
-//  }
-//  return (
-//   <View style={styles.buttonContainer}>
-//    <Pressable style={styles.button} onPress={() => {onPress()}}>
-//     <Text style={styles.buttonLabel}>{label}</Text>
-//    </Pressable>
-//   </View>
+ }
+ return (
+  <View style={styles.buttonContainer}>
+   <Pressable style={styles.button} onPress={() => { onPress() }}>
+    <Text style={styles.buttonLabel}>{label}</Text>
+   </Pressable>
+  </View>
 
-//  )
-// }
+ )
+}
 
-// const styles = StyleSheet.create({
-//  buttonContainer: {
-//   width: 320,
-//   height: 68,
-//   marginHorizontal: 20,
-//   alignItems: 'center',
-//   justifyContent: 'center',
-//   padding: 3,
-//  },
-//  button: {
-//   borderRadius: 10,
-//   width: '100%',
-//   height: '100%',
-//   alignItems: 'center',
-//   justifyContent: 'center',
-//   flexDirection: 'row',
-//  },
-//  buttonIcon: {
-//   paddingRight: 8,
-//  },
-//  buttonLabel: {
-//   color: '#fff',
-//   fontSize: 16,
-//  },
-// });
-
-
-// export default Button
-
-
-
-import React from 'react';
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 
 export const MyButton = ({ onPress, text }) => {
-  return (
-    <TouchableOpacity style={styles.container} onPress={onPress} activeOpacity={0.8}>
-      <Text style={styles.text}>{text}</Text>
-    </TouchableOpacity>
-  );
+ return (
+  <TouchableOpacity style={styles.container} onPress={onPress} activeOpacity={0.8}>
+   <Text style={styles.text}>{text}</Text>
+  </TouchableOpacity>
+ );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    backgroundColor: 'blue',
-    borderRadius: 8,
-  },
-  text: { color: 'white' },
+ buttonContainer: {
+  width: 320,
+  height: 68,
+  marginHorizontal: 20,
+  alignItems: 'center',
+  justifyContent: 'center',
+  padding: 3,
+ },
+ button: {
+  borderRadius: 10,
+  width: '100%',
+  height: '100%',
+  alignItems: 'center',
+  justifyContent: 'center',
+  flexDirection: 'row',
+ },
+ buttonIcon: {
+  paddingRight: 8,
+ },
+ buttonLabel: {
+  color: '#fff',
+  fontSize: 16,
+ },
+ container: {
+  paddingHorizontal: 16,
+  paddingVertical: 8,
+  backgroundColor: 'blue',
+  borderRadius: 8,
+ },
+ text: { color: 'white' },
 });
+
+
+
+
+
+
